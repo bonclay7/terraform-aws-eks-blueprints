@@ -1,13 +1,12 @@
-# AWS OpenTelemetry EKS for JMX -- Helm Chart
+# Observability Patter for Java/JMX
 
-[AWS Distro for OpenTelemetry (ADOT)](https://aws-otel.github.io/) is a secure,
-production-ready, AWS-supported distribution of the OpenTelemetry project.
-Part of the Cloud Native Computing Foundation, OpenTelemetry provides open
-source APIs, libraries, and agents to collect distributed traces and metrics
-for application monitoring.
+This module provides an automated experience around Observability for Java/JMX workloads.
+It provides the following resources:
 
-This helm chart specifically an ADOT collector inside your EKS cluster with
-tailored configuration for Java/JMX workloads.
+- AWS Distro For OpenTelemetry Operator and Collector
+- AWS Managed Grafana Dashboard and data source
+- Alerts and recording rules with AWS Managed Service for Prometheus
+
 
 <!--- BEGIN_TF_DOCS --->
 ## Requirements
@@ -19,7 +18,6 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
 
 ## Modules
 
@@ -28,6 +26,7 @@ No requirements.
 | <a name="module_helm_addon"></a> [helm\_addon](#module\_helm\_addon) | ../helm-addon | n/a |
 | <a name="module_irsa_amp_ingest"></a> [irsa\_amp\_ingest](#module\_irsa\_amp\_ingest) | ../../../modules/irsa | n/a |
 | <a name="module_irsa_amp_query"></a> [irsa\_amp\_query](#module\_irsa\_amp\_query) | ../../../modules/irsa | n/a |
+| <a name="module_operator"></a> [operator](#module\_operator) | ../aws-opentelemetry-operator | n/a |
 
 ## Resources
 
@@ -35,7 +34,6 @@ No requirements.
 |------|------|
 | [aws_iam_policy.ingest](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.query](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [kubernetes_namespace_v1.prometheus](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace_v1) | resource |
 | [aws_iam_policy_document.ingest](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.query](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
@@ -54,5 +52,4 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | <a name="output_argocd_gitops_config"></a> [argocd\_gitops\_config](#output\_argocd\_gitops\_config) | Configuration used for managing the add-on with ArgoCD |
-
 <!--- END_TF_DOCS --->
