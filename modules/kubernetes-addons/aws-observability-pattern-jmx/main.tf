@@ -89,7 +89,7 @@ resource "grafana_folder" "jmx_dashboards" {
 
 resource "grafana_dashboard" "jmx_dashboards" {
   folder      = grafana_folder.jmx_dashboards.id
-  config_json = file("dashboards/default.json")
+  config_json = file("${path.module}/dashboards/default.json")
 }
 
 
