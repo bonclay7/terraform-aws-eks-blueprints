@@ -16,7 +16,6 @@ module "operator" {
 
 # Deploys JMX collector CDR
 module "helm_addon" {
-  count             = 1
   source            = "../helm-addon"
   manage_via_gitops = var.manage_via_gitops
   set_values        = local.otel_config_values
