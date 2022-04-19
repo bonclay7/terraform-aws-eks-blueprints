@@ -104,22 +104,19 @@ application.
 kubectl get pods -n opentelemetry-operator-system
 
 NAMESPACE                       NAME                                                         READY   STATUS    RESTARTS   AGE
-cert-manager                    cert-manager-7989877dff-jxk57                                1/1     Running   0          22m
-cert-manager                    cert-manager-cainjector-7d55bf8f78-jcc6d                     1/1     Running   0          22m
-cert-manager                    cert-manager-webhook-577f77586f-m6mlg                        1/1     Running   0          22m
-kube-system                     aws-node-kvbdl                                               1/1     Running   0          78m
-kube-system                     aws-node-lv4g4                                               1/1     Running   0          78m
-kube-system                     aws-node-x8zcs                                               1/1     Running   0          78m
-kube-system                     coredns-745979c988-bhtx6                                     1/1     Running   0          84m
-kube-system                     coredns-745979c988-ktdlg                                     1/1     Running   0          84m
-kube-system                     kube-proxy-2wqr2                                             1/1     Running   0          78m
-kube-system                     kube-proxy-7kz4p                                             1/1     Running   0          78m
-kube-system                     kube-proxy-rxkp8                                             1/1     Running   0          78m
-opentelemetry-operator-system   adot-collector-5n89j                                         1/1     Running   0          20m
-opentelemetry-operator-system   adot-collector-5n9p5                                         1/1     Running   0          20m
-opentelemetry-operator-system   adot-collector-64c8b46888-ht75k                              1/1     Running   0          20m
-opentelemetry-operator-system   adot-collector-rfktd                                         1/1     Running   0          20m
-opentelemetry-operator-system   opentelemetry-operator-controller-manager-68f5b47944-pv6x7   2/2     Running   0          21m
+cert-manager                    cert-manager-7989877dff-jxk57                                1/1     Running   0          160m
+cert-manager                    cert-manager-cainjector-7d55bf8f78-jcc6d                     1/1     Running   0          160m
+cert-manager                    cert-manager-webhook-577f77586f-m6mlg                        1/1     Running   0          160m
+kube-system                     aws-node-kvbdl                                               1/1     Running   0          3h36m
+kube-system                     aws-node-lv4g4                                               1/1     Running   0          3h36m
+kube-system                     aws-node-x8zcs                                               1/1     Running   0          3h36m
+kube-system                     coredns-745979c988-bhtx6                                     1/1     Running   0          3h42m
+kube-system                     coredns-745979c988-ktdlg                                     1/1     Running   0          3h42m
+kube-system                     kube-proxy-2wqr2                                             1/1     Running   0          3h36m
+kube-system                     kube-proxy-7kz4p                                             1/1     Running   0          3h36m
+kube-system                     kube-proxy-rxkp8                                             1/1     Running   0          3h36m
+opentelemetry-operator-system   adot-collector-64c8b46888-q6s98                              1/1     Running   0          158m
+opentelemetry-operator-system   opentelemetry-operator-controller-manager-68f5b47944-pv6x7   2/2     Running   0          158m
 ```
 
 - Open your Managed Grafana Workspace, head to the configuration page and and verify that Amazon Managed Prometheus was added as a default data source, test its connectivity.
