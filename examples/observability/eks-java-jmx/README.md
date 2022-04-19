@@ -49,7 +49,7 @@ Instead, use an external secret store such as AWS Secrets Manager and use the
 - Clone this repository:
 
 ```
-git clone https://github.com/aws-samples/aws-eks-accelerator-for-terraform.git
+git clone https://github.com/aws-ia/terraform-aws-eks-blueprints.git
 ```
 
 - Initialize a working directory
@@ -103,18 +103,23 @@ application.
 ```
 kubectl get pods -n opentelemetry-operator-system
 
-NAMESPACE                       NAME                              READY   STATUS    RESTARTS   AGE
-kube-system                     aws-node-lftbf                    1/1     Running   0          2m
-kube-system                     aws-node-qljbf                    1/1     Running   0          2m
-kube-system                     aws-node-z5vfm                    1/1     Running   0          2m
-kube-system                     coredns-7cc879f8db-jqbmx          1/1     Running   0          7m
-kube-system                     coredns-7cc879f8db-x4frt          1/1     Running   0          7m
-kube-system                     kube-proxy-4kxzk                  1/1     Running   0          2m
-kube-system                     kube-proxy-ggfdn                  1/1     Running   0          2m
-kube-system                     kube-proxy-wl48k                  1/1     Running   0          2m
-opentelemetry-operator-system   adot-collector-qpgww              1/1     Running   0          1m
-opentelemetry-operator-system   adot-collector-wcl5z              1/1     Running   0          1m
-opentelemetry-operator-system   adot-collector-zsbtc              1/1     Running   0          1m
+NAMESPACE                       NAME                                                         READY   STATUS    RESTARTS   AGE
+cert-manager                    cert-manager-7989877dff-jxk57                                1/1     Running   0          22m
+cert-manager                    cert-manager-cainjector-7d55bf8f78-jcc6d                     1/1     Running   0          22m
+cert-manager                    cert-manager-webhook-577f77586f-m6mlg                        1/1     Running   0          22m
+kube-system                     aws-node-kvbdl                                               1/1     Running   0          78m
+kube-system                     aws-node-lv4g4                                               1/1     Running   0          78m
+kube-system                     aws-node-x8zcs                                               1/1     Running   0          78m
+kube-system                     coredns-745979c988-bhtx6                                     1/1     Running   0          84m
+kube-system                     coredns-745979c988-ktdlg                                     1/1     Running   0          84m
+kube-system                     kube-proxy-2wqr2                                             1/1     Running   0          78m
+kube-system                     kube-proxy-7kz4p                                             1/1     Running   0          78m
+kube-system                     kube-proxy-rxkp8                                             1/1     Running   0          78m
+opentelemetry-operator-system   adot-collector-5n89j                                         1/1     Running   0          20m
+opentelemetry-operator-system   adot-collector-5n9p5                                         1/1     Running   0          20m
+opentelemetry-operator-system   adot-collector-64c8b46888-ht75k                              1/1     Running   0          20m
+opentelemetry-operator-system   adot-collector-rfktd                                         1/1     Running   0          20m
+opentelemetry-operator-system   opentelemetry-operator-controller-manager-68f5b47944-pv6x7   2/2     Running   0          21m
 ```
 
 - Open your Managed Grafana Workspace, head to the configuration page and and verify that Amazon Managed Prometheus was added as a default data source, test its connectivity.
@@ -245,4 +250,4 @@ kubectl logs -f -n opentelemetry-operator-system adot-collector-xxxx
 No outputs.
 
 <!--- END_TF_DOCS --->
-```
+
