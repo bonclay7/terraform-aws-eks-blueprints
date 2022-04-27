@@ -666,3 +666,9 @@ variable "enable_aws_observability_pattern_jmx" {
   default     = false
   description = "Enable metrics for JMX workloads, automatic Managed Grafana Dashboards and AMP alerts"
 }
+
+variable "enable_aws_observability_pattern_nginx" {
+  type        = bool
+  default     = false
+  description = "Enable metrics for Nginx workloads, automatic Managed Grafana Dashboards and AMP alerts"
+}

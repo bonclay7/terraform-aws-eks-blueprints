@@ -280,3 +280,11 @@ module "aws_observability_pattern_jmx" {
   amazon_prometheus_workspace_region   = var.amazon_prometheus_workspace_region
   addon_context                        = local.addon_context
 }
+
+module "aws_observability_pattern_nginx" {
+  count                                = var.enable_aws_observability_pattern_nginx ? 1 : 0
+  source                               = "./aws-observability-pattern-nginx"
+  amazon_prometheus_workspace_endpoint = var.amazon_prometheus_workspace_endpoint
+  amazon_prometheus_workspace_region   = var.amazon_prometheus_workspace_region
+  addon_context                        = local.addon_context
+}
