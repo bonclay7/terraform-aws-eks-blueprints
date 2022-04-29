@@ -1,5 +1,7 @@
 # variable "grafana_workspace_id" {}
-variable "grafana_endpoint" {}
+variable "grafana_endpoint" {
+  type        = string
+  description = "Grafana workspace endpoint for making API calls"
 
 variable "grafana_api_key" {
   type        = string
